@@ -1,0 +1,37 @@
+<div class="buy-together-block">
+  {# <h2>{{ 'Frequently Bought Together'|t }}</h2> #}
+  
+  <ul class="buy-together-products">
+    {% for product in products %}
+      <li class="product-item">
+        {% if product.image %}
+        <div class="product-item-img">
+          <img src="{{ product.image }}" alt="{{ product.title }}">
+          </div>
+        {% endif %}
+        <div class="cuproduct-title"><a href="{{ product.url }}">{{ product.title }}</a></div>
+        <div class="cuproduct-price">{{ product.price }}</div>
+      </li>
+      {# Only show the "+" symbol if this is not the last product #}
+      {% if not loop.last %}
+        <div class="padd-sign"> + </div>
+        {% else %}
+          <div class="padd-sign"> = </div>
+      {% endif %}
+    
+    {% endfor %}
+  </ul>
+  <div class="total-buy-together">
+    <div class="buy-together-total">
+      <strong> {{ total_price }} </strong>
+      <div class="for-items"> {{ 'for'|t }} {{ products|length }} {{ 'items'|t }} </div>
+    </div>
+    {% if add_to_cart_url %}
+      <a href="{{ add_to_cart_url }}" class="btn btn-dark">{{ 'Add to Cart'|t }}</a>
+    {% endif %}
+  </div>
+  
+ 
+
+ 
+</div>

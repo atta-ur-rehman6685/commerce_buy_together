@@ -1,0 +1,8 @@
+name: 'Commerce Buy Together'
+type: module
+description: 'Provides a block to display products frequently bought together with a single add to cart button.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:block
+  - drupal:commerce

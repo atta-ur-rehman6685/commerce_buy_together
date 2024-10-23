@@ -1,0 +1,11 @@
+commerce_buy_together.add_to_cart:
+  path: '/buy-together/add-to-cart/{product_ids}'
+  defaults:
+    _controller: '\Drupal\commerce_buy_together\Controller\BuyTogetherController::addToCart'
+    _title: 'Add Products to Cart'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      product_ids:
+        type: String

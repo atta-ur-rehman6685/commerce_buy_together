@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * Primary theme hooks.
+ *
+ */
+function commerce_buy_together_theme($existing, $type, $theme, $path) {
+  $theme = [];
+
+//   $theme['dashboard_barchart'] = [
+//     'template' => 'dashboard_barchart',
+//     'path' => \Drupal::service('extension.path.resolver')->getPath('module', 'bgcchub_og_dashboard').'/templates',
+//     'variables' => [
+//       'programs' => [],
+//       'activities' => [],
+//       'events' => []
+//     ],
+//   ];
+//   $theme['dashboard_province_completed'] = [
+//     'template' => 'dashboard_province_completed',
+//     'path' => \Drupal::service('extension.path.resolver')->getPath('module', 'bgcchub_og_dashboard').'/templates',
+//     'variables' => [
+//     ],
+//   ];
+  $theme['buy_together_block'] = [
+    'template' => 'buy-together-block',
+    'path' => \Drupal::service('extension.path.resolver')->getPath('module', 'commerce_buy_together').'/templates',
+    'variables' => [
+        'products' => NULL,
+        'total_price' => NULL,
+        'add_to_cart_url' => NULL,
+    ],
+  ];
+  return $theme;
+}
